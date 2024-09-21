@@ -1,6 +1,8 @@
-import { appendNumber, clearDisplay, calculate, handleBackspace } from './calculator.js';
+import { clearDisplay, calculate, appendNumber } from './modules/calculator.js';
 
-document.querySelectorAll('.buttons button').forEach(button => {
+// 获取按钮元素并绑定事件监听器
+const buttons = document.querySelectorAll('.buttons button');
+buttons.forEach(button => {
     button.addEventListener('click', function() {
         const buttonId = this.id;
 
@@ -10,8 +12,6 @@ document.querySelectorAll('.buttons button').forEach(button => {
             calculate();
         } else if (buttonId === '+/-' || buttonId === '%') {
             appendNumber(buttonId);
-        } else if (buttonId === 'backspace') {
-            handleBackspace();
         } else {
             appendNumber(buttonId);
         }
