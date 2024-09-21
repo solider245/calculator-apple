@@ -53,7 +53,7 @@ body {
   grid-gap: 10px;
 }
 .buttons .backspace {
-    grid-column: span 2; /* 使退格键占据两列 */
+    grid-column: span 1; /* 使退格键占据两列 */
     font-size: 1.5em;
 }
 button {
