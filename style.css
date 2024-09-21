@@ -52,7 +52,10 @@ body {
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 10px;
 }
-
+.buttons .backspace {
+    grid-column: span 2; /* 使退格键占据两列 */
+    font-size: 1.5em;
+}
 button {
   background-color: #505050;
   border: none;

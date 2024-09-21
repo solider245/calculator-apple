@@ -1,7 +1,7 @@
 let currentInput = '0';
 let history = [];
 
-const resultDisplay = document.getElementById('result');
+let resultDisplay = document.getElementById('result');
 const historyDiv = document.getElementById('history');
 
 function updateDisplay() {
@@ -63,8 +63,15 @@ buttons.forEach(button => {
             calculate();
         } else if (buttonId === '+/-' || buttonId === '%') {
             appendNumber(buttonId);
+        } else if (buttonId === 'backspace') {
+            handleBackspace();
         } else {
             appendNumber(buttonId);
         }
     });
 });
+
+function handleBackspace() {
+    currentInput = currentInput.slice(0, -1);
+    resultDisplay.textContent = currentInput || '0';
+}
