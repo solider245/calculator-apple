@@ -1,0 +1,9 @@
+/* 设置页面的基本样式 */
+body {
+    font-family: "San Francisco", "Helvetica Neue", Helvetica, Arial, sans-serif; /* 设置字体 */
+    background-color: #333; /* 设置背景颜色 */
+    display: flex; /* 使用 Flexbox 布局 */
+    justify-content: center; /* 水平居中 */
+    align-items: center; /* 垂直居中 */
+    min-height: 100vh; /* 最小高度为视口高度 */
+  }

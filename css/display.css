@@ -1,0 +1,15 @@
+/* 显示区域的样式 */
+.display {
+    background-color: #1c1c1c; /* 设置背景颜色 */
+    border-radius: 5px; /* 设置圆角 */
+    padding: 10px; /* 设置内边距 */
+    margin-bottom: 10px; /* 设置底部外边距 */
+    text-align: right; /* 文字右对齐 */
+  }
+  
+  /* 显示区域中的文本样式 */
+  .display p {
+    font-size: 36px; /* 设置字体大小 */
+    color: #fff; /* 设置文字颜色 */
+    margin: 0; /* 去除外边距 */
+  }
