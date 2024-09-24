@@ -1,13 +1,15 @@
-let currentInput = '0';
-let history = [];
+let currentInput = '0'; // 当前输入的数字
+let history = []; // 存储历史记录
 
-let resultDisplay = document.getElementById('result');
-const historyDiv = document.getElementById('history');
+let resultDisplay = document.getElementById('result'); // 获取显示结果的元素
+const historyDiv = document.getElementById('history'); // 获取历史记录显示的元素
 
+// 更新显示的函数
 function updateDisplay() {
     resultDisplay.textContent = currentInput;
 }
 
+// 更新历史记录的函数
 function updateHistory() {
     historyDiv.innerHTML = ''; // 清空历史记录
 
@@ -18,8 +20,9 @@ function updateHistory() {
     });
 }
 
+// 添加数字到当前输入的函数
 function appendNumber(number) {
-    if (currentInput === '0' && number !== '.' && number !== '+/-' && number !== '%') {
+    if (currentInput === '0' && number!== '.' && number!== '+/-' && number!== '%') {
         currentInput = number;
     } else if (number === '+/-') {
         currentInput = (parseFloat(currentInput) * -1).toString();
@@ -30,7 +33,7 @@ function appendNumber(number) {
     }
     updateDisplay();
 }
-
+// 清除显示和历史记录的函数
 function clearDisplay() {
     currentInput = '0';
     history = [];
@@ -38,6 +41,7 @@ function clearDisplay() {
     updateHistory();
 }
 
+// 执行计算的函数
 function calculate() {
     try {
         const result = eval(currentInput).toString();
@@ -50,7 +54,6 @@ function calculate() {
         updateDisplay();
     }
 }
-
 // 获取按钮元素并绑定事件监听器
 const buttons = document.querySelectorAll('.buttons button');
 buttons.forEach(button => {
@@ -71,6 +74,7 @@ buttons.forEach(button => {
     });
 });
 
+// 处理退格键的函数
 function handleBackspace() {
     currentInput = currentInput.slice(0, -1);
     resultDisplay.textContent = currentInput || '0';
