@@ -3,67 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- 页面标题，显示在浏览器标签页上 -->
     <title>仿苹果计算器</title>
-    <!-- 引入外部样式表，用于美化页面和计算器样式 -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- 计算器容器 -->
     <div class="calculator">
-        <!-- 历史记录显示区域 -->
         <div class="history" id="history"></div>
-        <!-- 显示计算结果的区域 -->
         <div class="display">
-            <!-- 当前计算结果显示 -->
             <p id="result">0</p>
         </div>
-        <!-- 计算器按钮区域 -->
-        <div class="buttons">
-            <!-- 清除按钮，用于清空当前计算 -->
-            <button class="clear" id="clear">AC</button>
-            <!-- 正负号切换按钮，用于改变数字的正负 -->
-            <button id="+/-">+/-</button>
-            <!-- 百分号按钮，用于计算百分比 -->
-            <button id="%">%</button>
-            <!-- 除法运算符按钮 -->
-            <button class="operator" id="/">÷</button>
-            <!-- 数字按钮 7 -->
-            <button id="7">7</button>
-            <!-- 数字按钮 8 -->
-            <button id="8">8</button>
-            <!-- 数字按钮 9 -->
-            <button id="9">9</button>
-            <!-- 乘法运算符按钮 -->
-            <button class="operator" id="*">×</button>
-            <!-- 数字按钮 4 -->
-            <button id="4">4</button>
-            <!-- 数字按钮 5 -->
-            <button id="5">5</button>
-            <!-- 数字按钮 6 -->
-            <button id="6">6</button>
-            <!-- 减法运算符按钮 -->
-            <button class="operator" id="-">-</button>
-            <!-- 数字按钮 1 -->
-            <button id="1">1</button>
-            <!-- 数字按钮 2 -->
-            <button id="2">2</button>
-            <!-- 数字按钮 3 -->
-            <button id="3">3</button>
-            <!-- 加法运算符按钮 -->
-            <button class="operator" id="+">+</button>
-            <!-- 数字按钮 0 -->
-            <button id="0">0</button>
-            <!-- 小数点按钮 -->
-            <button id=".">.</button>
-            <!-- 等于号按钮，用于执行计算 -->
-            <button class="equals" id="=">=</button>
-            <!-- 退格键按钮，用于删除最后一个输入 -->
-            <button class="backspace" id="backspace">←</button>
-        </div>
+        <div class="buttons" id="buttons-container"></div>
     </div>
-
-    <!-- 引入 JavaScript 文件，用于实现计算器的逻辑功能 -->
     <script src="main.js"></script>
 </body>
 </html>
