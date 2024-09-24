@@ -1,4 +1,5 @@
 import { createButtons } from './functions/createButtons.js';
+import { saveToLocalStorage, loadHistoryFromLocalStorage } from './functions/historyManager.js';
 
 let currentInput = '0';
 let history = [];
@@ -51,6 +52,14 @@ function clearDisplay() {
 function calculate() {
     try {
         const result = eval(currentInput).toString();
+        const entry = {
+            id: Date.now(), // 使用时间戳作为唯一ID
+            timestamp: new Date().toISOString(),
+            input: currentInput,
+            result: result,
+            note: '' // 你可以在这里添加备注
+        };
+        saveToLocalStorage(entry);
         history.push(`${currentInput} = ${result}`);
         currentInput = result;
         updateDisplay();
@@ -90,4 +99,6 @@ function bindEventListeners() {
 }
 
 // 初始化
+history = loadHistoryFromLocalStorage().map(entry => `${entry.input} = ${entry.result}`);
+updateHistory();
 bindEventListeners();
